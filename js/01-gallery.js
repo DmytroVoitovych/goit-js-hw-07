@@ -23,8 +23,12 @@ const stopLink = (e)=> e.preventDefault();
 
 //выход по ескейпу
 const escapeCloseModal = (e) => {
-    if (!e.code === 'ESCAPE') {  return; }
-    window.removeEventListener('keydown', escapeCloseModal); document.querySelector('.basicLightbox').remove();
+    if (e.code === 'Escape') {
+    window.removeEventListener('keydown', escapeCloseModal);
+    document.querySelector('.basicLightbox').remove();
+}
+    return;  
+    
 };
 
 
