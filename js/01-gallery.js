@@ -15,12 +15,6 @@ return `<a class="gallery__link" href="${original}">
 }).join(" ");
 gallery.insertAdjacentHTML("beforeend", ` ${imgGallery}`);
 
-//блок перехода
-const link = document.querySelectorAll('.gallery__link');
-const stopLink = (e)=> e.preventDefault();
-[...link].map(item => item.addEventListener('click', stopLink));
-
-
 //выход по ескейпу
 const escapeCloseModal = (e) => {
     if (e.code === 'Escape') {
@@ -34,6 +28,7 @@ const escapeCloseModal = (e) => {
 
 //библиотека которая мне не нравится
 const clickImg = (evt) => {
+    evt.preventDefault();
     window.addEventListener('keydown', escapeCloseModal);
     if (!evt.target.classList.contains("gallery__image") ) { return; } const instance = basicLightbox.create(
           	`<img  src="${evt.target.dataset.source}"></img>`

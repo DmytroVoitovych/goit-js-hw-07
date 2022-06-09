@@ -16,11 +16,6 @@ return `<li><a  class="gallery__link" href="${original}">
 }).join(" ");
 gallery.insertAdjacentHTML("beforeend", ` ${imgGallery}`);
 
-//блок перехода
-const link = document.querySelectorAll('.gallery__link');
-const stopLink = (e)=> e.preventDefault();
-[...link].map(item => item.addEventListener('click', stopLink));
-
 //получше преведущего
 var lightbox = new SimpleLightbox('.gallery a', {captionDelay:250});
 
